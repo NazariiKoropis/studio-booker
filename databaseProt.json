@@ -1,0 +1,90 @@
+{
+    "users": {
+        "uid_1": {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "role": "member",
+            "isAdmin": false,
+            "createdAt": "2025-11-12T18:00:00+02:00"
+        },
+        "uid_2": {
+            "name": "Jane Smith",
+            "email": "jane@example.com",
+            "role": "admin",
+            "isAdmin": true,
+            "createdAt": "2025-11-12T18:00:00+02:00"
+        }
+    },
+    "studios": {
+        "studio_1": {
+            "name": "Moon Studio",
+            "location": "Lviv, Franka 12",
+            "pricePerHour": 100,
+            "phone": "+3800000000",
+            "email": "studio@gmail.com",
+            "capacity": 5,
+            "rating": 4.5,
+            "description": "Modern photo studio with natural light.",
+            "images": [
+                "moon1.jpg",
+                "moon2.jpg",
+                "moon3.jpg"
+            ]
+        },
+        "studio_2": {
+            "name": "Sun Studio",
+            "location": "Lviv, Zelena 45",
+            "pricePerHour": 120,
+            "phone": "+3800000001",
+            "email": "sun@gmail.com",
+            "capacity": 8,
+            "rating": 4.8,
+            "description": "Bright loft with props and modern lighting.",
+            "images": [
+                "sun1.jpg",
+                "sun2.jpg",
+                "sun3.jpg"
+            ]
+        }
+    },
+    "bookings": {
+        "booking_1": {
+            "userId": "uid_1",
+            "studioId": "studio_1",
+            "bookDate": "2031-11-11",
+            "startTime": "23:00",
+            "durationHours": 2,
+            "peopleCount": 11,
+            "totalPrice": 200,
+            "status": "confirmed",
+            "createdAt": "2025-11-12T18:00:00+02:00"
+        },
+        "booking_2": {
+            "userId": "uid_2",
+            "studioId": "studio_2",
+            "bookDate": "2031-12-01",
+            "startTime": "15:00",
+            "durationHours": 1,
+            "peopleCount": 3,
+            "totalPrice": 120,
+            "status": "pending",
+            "createdAt": "2025-11-12T18:10:00+02:00"
+        }
+    },
+    "reviews": {
+        "review_1": {
+            "userId": "uid_1",
+            "studioId": "studio_1",
+            "message": "Nice place, good lighting!",
+            "rating": 4.5,
+            "createdAt": "2025-11-12T18:00:00+02:00"
+        },
+        "review_2": {
+            "userId": "uid_2",
+            "studioId": "studio_2",
+            "message": "Very professional staff!",
+            "rating": 5,
+            "createdAt": "2025-11-12T18:00:00+02:00"
+        }
+    }
+}
