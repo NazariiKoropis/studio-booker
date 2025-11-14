@@ -1,0 +1,96 @@
+@use "../../../assets/styles/variables" as v;
+
+/* ============================
+   BUTTON BASE
+============================ */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: v.$button-primary;
+    color: v.$text-light;
+    border: none;
+    border-radius: v.$radius;
+    cursor: pointer;
+
+    padding: 12px 22px;
+    font-family: v.$font-main;
+    font-size: v.$fs-base;
+    line-height: v.$lh-base;
+
+    transition: 0.2s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+        background: v.$button-primary-hover;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+/* ============================
+   SIZE VARIANTS
+============================ */
+.button--sm {
+    padding: 8px 16px;
+    font-size: calc(v.$fs-base * 0.9);
+}
+
+.button--md {
+    padding: 12px 22px;
+}
+
+.button--lg {
+    padding: 16px 28px;
+    font-size: calc(v.$fs-base * 1.15);
+}
+
+/* ============================
+   FULL WIDTH
+============================ */
+.button--full {
+    width: 100%;
+}
+
+/* ============================
+   STYLE VARIANTS
+============================ */
+.button--primary {
+    background: v.$button-primary;
+
+    &:hover {
+        background: v.$button-primary-hover;
+    }
+}
+
+.button--dark {
+    background: v.$button-dark;
+
+    &:hover {
+        background: v.$button-dark-hover;
+    }
+}
+
+.button--outline {
+    background: transparent;
+    border: 2px solid v.$button-primary;
+    color: v.$button-primary;
+
+    &:hover {
+        background: v.$button-primary;
+        color: v.$text-light;
+    }
+}
+
+.button--ghost {
+    background: transparent;
+    color: v.$button-primary;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

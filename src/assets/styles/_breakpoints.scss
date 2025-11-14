@@ -1,0 +1,52 @@
+// MOBILE FIRST
+
+$break-small: 480px;
+$break-tablet: 768px;
+$break-laptop: 1024px;
+$break-desktop: 1280px;
+$break-wide: 1440px;
+$break-fullhd: 1920px;
+$break-2k: 2560px;
+
+// Міксіни
+@mixin small-phone {
+    @media (max-width: $break-small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $break-tablet) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: $break-laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $break-desktop) {
+        @content;
+    }
+}
+
+@mixin wide {
+    @media (min-width: $break-wide) {
+        @content;
+    }
+}
+
+@mixin fullhd {
+    @media (min-width: $break-fullhd) {
+        @content;
+    }
+}
+
+@mixin monitor2k {
+    @media (min-width: $break-2k) {
+        @content;
+    }
+}
