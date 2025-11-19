@@ -1,17 +1,83 @@
-header {
-    Container {
-        .headerLogo {
-            img {
-            }
+@use "../../../assets/styles/variables" as v;
+@use "../../../assets/styles/breakpoints" as bp;
+
+.header {
+    background-color: v.$background-primary;
+    padding: 25px;
+}
+.headerInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerLogo {
+    height: 75px;
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.navBar {
+    .navList {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        li {
+            list-style: none;
         }
-        .navBar {
-            .navList {
-                li {
-                }
+
+        a {
+            color: v.$text-dark;
+            text-decoration: none;
+            font-size: v.$fs-base;
+            font-weight: 500;
+            transition: 0.2;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+
+            &:hover {
+                color: v.$accent;
+                background-color: rgba(v.$blue, 0.08);
+                padding: 4px 8px;
+                border-radius: v.$radius;
+            }
+
+            &.active {
+                color: v.$text-light;
+                font-weight: 600;
+                padding: 6px 12px;
+                border-radius: v.$radius;
+                background-color: v.$button-primary;
             }
         }
     }
 }
 
---isActive {
+@include bp.desktop {
+    .headerInner {
+        padding: 0 16px;
+        gap: 24px;
+    }
+
+    .navBar .navList a {
+        font-size: 14px;
+    }
+}
+
+@include bp.tablet {
+    .headerInner {
+        max-width: bp.$break-tablet;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .navBar .navList {
+        text-align: start;
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

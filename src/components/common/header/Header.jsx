@@ -6,24 +6,45 @@ import Button from '../../ui/button/Button'
 
 export default function Header() {
   return (
-    <header>
-      <Container>
-        <div className="headerLogo">
+    <header className={styles.header}>
+      <Container className={styles.headerInner}>
+        <div className={styles.headerLogo}>
           <img src={logo} alt="studio-booker-logo" />
         </div>
-        <nav className="navBar">
-          <ul className="navList">
+
+        <nav className={styles.navBar}>
+          <ul className={styles.navList}>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/studies">Studies</NavLink>
+              <NavLink
+                to="/studios"
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
+                Studios
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/">About</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/admin">Admin</NavLink>
+              <NavLink
+                to="/admin"
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
+                Admin
+              </NavLink>
             </li>
           </ul>
         </nav>
