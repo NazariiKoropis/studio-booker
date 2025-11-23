@@ -3,28 +3,35 @@
 
 .header {
     background-color: v.$background-primary;
-    padding: 25px;
-}
-.headerInner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 15px 0;
 }
 
+/* Layout */
+.headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Centered logo */
 .headerLogo {
-    height: 75px;
+    height: 150px;
+
     img {
         height: 100%;
         width: auto;
     }
 }
 
+/* Desktop Navbar */
 .navBar {
+    display: flex;
+
     .navList {
         display: flex;
-        align-items: center;
         gap: 20px;
+
         li {
             list-style: none;
         }
@@ -32,52 +39,116 @@
         a {
             color: v.$text-dark;
             text-decoration: none;
-            font-size: v.$fs-base;
+            font-size: 16px;
             font-weight: 500;
-            transition: 0.2;
-            line-height: 1.5;
-            letter-spacing: 0.5px;
+            padding: 6px 10px;
+            border-radius: v.$radius;
+            transition: 0.25s ease;
 
             &:hover {
+                background-color: rgba(v.$blue, 0.12);
                 color: v.$accent;
-                background-color: rgba(v.$blue, 0.08);
-                padding: 4px 8px;
-                border-radius: v.$radius;
             }
 
             &.active {
+                background-color: v.$button-primary;
                 color: v.$text-light;
                 font-weight: 600;
-                padding: 6px 12px;
-                border-radius: v.$radius;
-                background-color: v.$button-primary;
             }
         }
     }
 }
 
-@include bp.desktop {
-    .headerInner {
-        padding: 0 16px;
-        gap: 24px;
+/* Burger button */
+.burger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Desktop login */
+.desktopLogin {
+    display: block;
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100vh;
+    background: v.$background-secondary;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s;
+    z-index: 200;
+
+    a {
+        font-size: 20px;
+        font-weight: 600;
+        color: v.$navy;
+        text-decoration: none;
+
+        &:hover {
+            color: v.$blue;
+        }
     }
 
-    .navBar .navList a {
-        font-size: 14px;
+    &.open {
+        right: 0;
     }
 }
 
+/* Close button in menu */
+.closeBtn {
+    align-self: flex-end;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: v.$navy;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 150;
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
 @include bp.tablet {
-    .headerInner {
-        max-width: bp.$break-tablet;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+    .navBar,
+    .desktopLogin {
+        display: none;
     }
 
-    .navBar .navList {
-        text-align: start;
-        flex-direction: column;
-        align-items: stretch;
+    .burger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .headerLogo {
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
     }
 }

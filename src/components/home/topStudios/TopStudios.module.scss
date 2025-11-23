@@ -1,0 +1,40 @@
+@use "../../../assets/styles/variables" as v;
+@use "../../../assets/styles/breakpoints" as bp;
+
+.topStudios {
+    padding: 50px 0;
+    background: v.$background-primary;
+}
+
+.inner {
+    padding: 25px 0px;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 48px;
+    font-weight: 700;
+}
+
+.studiosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slide-in 0.8s ease-out forwards;
+}
+
+@include bp.tablet {
+    .studiosGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@keyframes slide-in {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

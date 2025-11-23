@@ -86,6 +86,17 @@
     }
 }
 
+.button--outline--light {
+    background: transparent;
+    border: 2px solid v.$white;
+    color: v.$white;
+
+    &:hover {
+        background: v.$white;
+        color: v.$text-dark;
+    }
+}
+
 .button--ghost {
     background: transparent;
     color: v.$button-primary;

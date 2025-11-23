@@ -109,26 +109,3 @@ img {
 ::-webkit-scrollbar-track {
     background: $lightBlue;
 }
-
-// ===============================
-// 📌 UTILITY CLASSES
-// ===============================
-
-// Центрування контенту flex
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-// Текст посередині
-.text-center {
-    text-align: center;
-}
-
-// Обмеження ширини контенту
-.wrapper {
-    max-width: $container-max-width;
-    margin: 0 auto;
-    padding: 0 $container-padding;
-}

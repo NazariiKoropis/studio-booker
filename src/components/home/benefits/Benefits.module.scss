@@ -1,0 +1,69 @@
+@use "../../../assets/styles/variables" as v;
+@use "../../../assets/styles/breakpoints" as bp;
+
+.benefits {
+    padding: 80px 0;
+    background-color: v.$background-primary;
+}
+
+.benefitsInner {
+    display: flex;
+    justify-content: center;
+}
+
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background: v.$white;
+    padding: 32px 24px;
+    border-radius: v.$radius;
+    text-align: center;
+    min-height: 260px;
+    box-shadow: v.$shadow-light;
+    transition: 0.25s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .cardIcon {
+        width: auto;
+        height: 60px;
+        margin: 0 auto 20px;
+    }
+
+    .cardTitle {
+        font-family: v.$font-heading;
+        font-size: v.$fs-h4;
+        margin-bottom: 10px;
+        color: v.$text-dark;
+    }
+
+    .cardText {
+        font-size: v.$fs-base;
+        opacity: 0.85;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+}
+
+@include bp.desktop {
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@include bp.tablet {
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
