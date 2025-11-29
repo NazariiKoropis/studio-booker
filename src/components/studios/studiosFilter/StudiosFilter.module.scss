@@ -1,0 +1,69 @@
+@use "../../../assets/styles/variables" as *;
+
+.studiosFilter {
+    background: $background-secondary;
+    padding: 20px 0;
+    border-radius: $radius;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* FORM items spacing */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ---- CHECKBOX GROUP ---- */
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.checkboxGroupTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 4px;
+}
+
+/* ---- CHECKBOX ---- */
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 15px;
+    color: $text-dark;
+
+    input {
+        width: 18px;
+        height: 18px;
+        accent-color: $blue; // кольор чекбокса при виборі
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 15px;
+        color: $text-dark;
+    }
+}
+
+/* ---- BUTTONS ---- */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}

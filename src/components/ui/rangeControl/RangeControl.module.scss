@@ -1,0 +1,78 @@
+@use "../../../assets/styles/variables" as *;
+@use "sass:color";
+
+.rangeControl {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: $text-dark; // navy
+}
+
+/* Контейнер */
+.trackWrapper {
+    position: relative;
+    width: 100%;
+    height: 34px;
+}
+
+/* Трек (фон) */
+.track {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    width: 100%;
+    background: $lightBlue; // #DBE2EF
+    border-radius: $radius;
+}
+
+.activeTrack {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    background: $blue; // accent
+    border-radius: $radius;
+}
+
+/* Обидва інпути — накладання */
+.thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 34px;
+    appearance: none;
+    background: none;
+    pointer-events: none; // ловить тільки thumb
+}
+
+/* Кастомна ручка */
+.thumb::-webkit-slider-thumb {
+    pointer-events: auto;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background: $navy; // головний темний акцент
+    border-radius: 50%;
+    border: 3px solid $white; // чисто студіobooker
+    box-shadow: $shadow-light;
+    cursor: pointer;
+}
+
+/* Ліва ручка */
+.thumbLeft {
+    z-index: 3;
+}
+
+/* Права ручка */
+.thumbRight {
+    z-index: 3;
+}

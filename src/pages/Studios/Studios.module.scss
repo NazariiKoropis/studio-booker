@@ -1,0 +1,8 @@
+@use "../../assets/styles/variables" as v;
+.studios {
+    background: linear-gradient(135deg, v.$navy, v.$blue);
+}
+
+.content {
+    border-top: 2px solid v.$accent;
+}

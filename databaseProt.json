@@ -18,6 +18,7 @@
     "studios": {
         "studio_1": {
             "name": "Moon Studio",
+            "slug": "moon-studio",
             "location": "Lviv, Franka 12",
             "pricePerHour": 100,
             "phone": "+3800000000",
@@ -26,13 +27,14 @@
             "rating": 4.5,
             "description": "Modern photo studio with natural light.",
             "images": [
-                "moon1.jpg",
-                "moon2.jpg",
-                "moon3.jpg"
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
             ]
         },
         "studio_2": {
             "name": "Sun Studio",
+            "slug": "sun-studio",
             "location": "Lviv, Zelena 45",
             "pricePerHour": 120,
             "phone": "+3800000001",
@@ -41,9 +43,9 @@
             "rating": 4.8,
             "description": "Bright loft with props and modern lighting.",
             "images": [
-                "sun1.jpg",
-                "sun2.jpg",
-                "sun3.jpg"
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
             ]
         }
     },

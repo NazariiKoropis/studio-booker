@@ -1,0 +1,54 @@
+@use "../../../assets/styles/variables" as v;
+@use "../../../assets/styles/breakpoints" as bp;
+
+.hero {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.inner {
+    padding: 20px 0px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.title {
+    color: v.$text-light;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: v.$accent;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+}
+
+.subtitle {
+    color: v.$text-light;
+    font-size: v.$fs-base;
+    max-width: 600px;
+    opacity: 0.85;
+    margin: 0 auto;
+}
+
+@include bp.small-phone {
+    .title {
+        font-size: calc(v.$fs-h1 * 0.85);
+    }
+}

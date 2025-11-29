@@ -1,0 +1,48 @@
+@use "../../../assets/styles/variables" as v;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: v.$text-dark;
+}
+
+.input {
+    margin: 5px 0px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 2px solid v.$border-color;
+    background: white;
+    font-size: 15px;
+    transition: 0.2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: v.$navy;
+        background: #f9f9f9;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.errorInput {
+    border-color: #d9534f;
+    background: #ffecec;
+}
+
+.errorText {
+    font-size: 12px;
+    color: #d9534f;
+}
