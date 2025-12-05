@@ -3,6 +3,7 @@ import Button from '../../ui/button/Button'
 
 export default function StudioCardLarge({
   image,
+  imageFolder,
   slug,
   title,
   price,
@@ -10,8 +11,9 @@ export default function StudioCardLarge({
   isHotTopic = false,
   onClick,
 }) {
+  const baseFolder = imageFolder || slug
   const imagePath = new URL(
-    `../../../assets/studios/${slug}/${image}`,
+    `../../../assets/studios/${baseFolder}/${image}`,
     import.meta.url
   ).href
 
