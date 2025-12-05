@@ -36,6 +36,42 @@
             "studioId": "studio_2",
             "totalPrice": 120,
             "userId": "test_admin_uid"
+        },
+        "booking_3": {
+            "userId": "test_member_uid",
+            "studioId": "sky_loft",
+            "customerPhone": "+380004445566",
+            "bookDate": "2031-10-10",
+            "startTime": "14:00",
+            "durationHours": 2,
+            "peopleCount": 3,
+            "totalPrice": 360,
+            "status": "pending",
+            "createdAt": "2024-12-05T12:00:00+02:00"
+        },
+        "booking_4": {
+            "userId": "test_admin_uid",
+            "studioId": "urban_light",
+            "customerPhone": "+380001112233",
+            "bookDate": "2031-09-01",
+            "startTime": "18:00",
+            "durationHours": 1,
+            "peopleCount": 5,
+            "totalPrice": 140,
+            "status": "confirmed",
+            "createdAt": "2024-12-05T12:00:00+02:00"
+        },
+        "booking_5": {
+            "userId": "a6kgYBwYwoPKPL4UQEFzJSC54B32",
+            "studioId": "cozy_corner",
+            "customerPhone": "",
+            "bookDate": "2031-08-20",
+            "startTime": "11:30",
+            "durationHours": 3,
+            "peopleCount": 2,
+            "totalPrice": 270,
+            "status": "pending",
+            "createdAt": "2024-12-05T12:00:00+02:00"
         }
     },
     "reviews": {
@@ -52,6 +88,27 @@
             "rating": 5,
             "studioId": "studio_2",
             "userId": "test_admin_uid"
+        },
+        "review_3": {
+            "userId": "test_member_uid",
+            "studioId": "sky_loft",
+            "message": "Дуже багато світла, зручно для портретів.",
+            "rating": 4.7,
+            "createdAt": "2024-12-05T12:00:00+02:00"
+        },
+        "review_4": {
+            "userId": "test_admin_uid",
+            "studioId": "urban_light",
+            "message": "Крутий неон і фон, але трохи шумно.",
+            "rating": 4.3,
+            "createdAt": "2024-12-05T12:00:00+02:00"
+        },
+        "review_5": {
+            "userId": "a6kgYBwYwoPKPL4UQEFzJSC54B32",
+            "studioId": "cozy_corner",
+            "message": "Затишно, але малувато місця для великої команди.",
+            "rating": 4.2,
+            "createdAt": "2024-12-05T12:00:00+02:00"
         }
     },
     "studios": {
@@ -60,7 +117,11 @@
             "description": "Сучасна фотостудія з природним освітленням.",
             "email": "studio@gmail.com",
             "id": "studio_1",
-            "images": [],
+            "images": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
             "isHotTopic": true,
             "locationAddress": "вул. Франка, 12",
             "locationCity": "lviv",
@@ -75,7 +136,11 @@
             "description": "Світлий лофт з реквізитом та сучасним освітленням.",
             "email": "sun@gmail.com",
             "id": "studio_2",
-            "images": [],
+            "images": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
             "isHotTopic": true,
             "locationAddress": "вул. Зелена, 45",
             "locationCity": "lviv",
@@ -84,6 +149,63 @@
             "pricePerHour": 120,
             "rating": 4.8,
             "slug": "sun-studio"
+        },
+        "sky_loft": {
+            "id": "sky_loft",
+            "name": "Sky Loft",
+            "slug": "sky-loft",
+            "locationCity": "kyiv",
+            "locationAddress": "вул. Сагайдачного, 25",
+            "pricePerHour": 180,
+            "capacity": 6,
+            "isHotTopic": false,
+            "rating": 4.6,
+            "description": "Світла студія з великими вікнами та мінімалістичним інтерʼєром.",
+            "email": "skyloft@example.com",
+            "phone": "+380990000001",
+            "images": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ]
+        },
+        "urban_light": {
+            "id": "urban_light",
+            "name": "Urban Light",
+            "slug": "urban-light",
+            "locationCity": "kharkiv",
+            "locationAddress": "просп. Науки, 50",
+            "pricePerHour": 140,
+            "capacity": 7,
+            "isHotTopic": true,
+            "rating": 4.7,
+            "description": "Лофт з бетонними стінами, неоном та професійним світлом.",
+            "email": "urbanlight@example.com",
+            "phone": "+380990000002",
+            "images": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ]
+        },
+        "cozy_corner": {
+            "id": "cozy_corner",
+            "name": "Cozy Corner",
+            "slug": "cozy-corner",
+            "locationCity": "odesa",
+            "locationAddress": "вул. Дерибасівська, 8",
+            "pricePerHour": 90,
+            "capacity": 4,
+            "isHotTopic": false,
+            "rating": 4.4,
+            "description": "Домашня атмосфера з мʼяким світлом і декором.",
+            "email": "cozy@example.com",
+            "phone": "+380990000003",
+            "images": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ]
         }
     },
     "users": {

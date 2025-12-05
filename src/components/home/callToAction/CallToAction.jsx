@@ -1,7 +1,11 @@
 import styles from './CallToAction.module.scss'
 import Container from '../../common/container/Container'
 import Button from '../../ui/button/Button'
+import { useNavigate } from 'react-router-dom'
+
 export default function CallToAction() {
+  const navigate = useNavigate()
+
   return (
     <section className={styles.CallToAction}>
       <Container className={styles.inner}>
@@ -13,7 +17,7 @@ export default function CallToAction() {
         <Button
           variant="outline"
           fullWidth
-          onClick={() => alert('Переходимо до переліку студій')}
+          onClick={() => navigate('/studios')}
         >
           Переглянути студії
         </Button>

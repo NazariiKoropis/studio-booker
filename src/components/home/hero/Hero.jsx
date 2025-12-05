@@ -1,8 +1,11 @@
 import Container from '../../common/container/Container'
 import Button from '../../ui/button/Button'
 import styles from './Hero.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 export default function Hero() {
+  const navigate = useNavigate()
+
   return (
     <section className={styles.hero}>
       <Container className={styles.heroContainer}>
@@ -15,7 +18,7 @@ export default function Hero() {
         </p>
         <Button
           variant="outline--light"
-          onClick={() => alert('Сторінка студій готується')}
+          onClick={() => navigate('/studios')}
         >
           Забронювати студію
         </Button>

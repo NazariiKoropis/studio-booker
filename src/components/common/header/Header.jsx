@@ -1,12 +1,29 @@
 import styles from './Header.module.scss'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../../assets/studio-booker-logo.png'
 import Container from '../container/Container'
 import Button from '../../ui/button/Button'
 import { useState } from 'react'
+import { useAuth } from '../../../contexts/authContext/AuthContext'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate()
+  const { user, logout } = useAuth()
+  const isAdmin = user?.isAdmin
+
+  const handleLogout = async () => {
+    await logout()
+    setIsOpen(false)
+    navigate('/')
+  }
+
+  const handleLoginClick = () => {
+    setIsOpen(false)
+    navigate('/login')
+  }
+
+  const userName = user?.displayName || user?.name || user?.email
 
   return (
     <header className={styles.header}>
@@ -42,21 +59,30 @@ export default function Header() {
                 Про нас
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/admin"
-                className={({ isActive }) => (isActive ? styles.active : '')}
-              >
-                Адмін
-              </NavLink>
-            </li>
+            {isAdmin && (
+              <li>
+                <NavLink
+                  to="/admin"
+                  className={({ isActive }) => (isActive ? styles.active : '')}
+                >
+                  Адмін
+                </NavLink>
+              </li>
+            )}
           </ul>
         </nav>
 
         <div className={styles.desktopLogin}>
-          <Button onClick={() => alert('Авторизація скоро буде')}>
-            Увійти
-          </Button>
+          {user ? (
+            <div className={styles.userBox}>
+              <div className={styles.userName}>{userName}</div>
+              <Button variant="dark" size="sm" onClick={handleLogout}>
+                Вийти
+              </Button>
+            </div>
+          ) : (
+            <Button onClick={handleLoginClick}>Увійти</Button>
+          )}
         </div>
 
         <button className={styles.burger} onClick={() => setIsOpen(true)}>
@@ -83,13 +109,26 @@ export default function Header() {
         <NavLink to="/about" onClick={() => setIsOpen(false)}>
           Про нас
         </NavLink>
-        <NavLink to="/admin" onClick={() => setIsOpen(false)}>
-          Адмін
-        </NavLink>
+        {isAdmin && (
+          <NavLink to="/admin" onClick={() => setIsOpen(false)}>
+            Адмін
+          </NavLink>
+        )}
 
-        <Button fullWidth onClick={() => setIsOpen(false)}>
-          Увійти
-        </Button>
+        {user ? (
+          <>
+            <div className={styles.userBox}>
+              <div className={styles.userName}>{userName}</div>
+            </div>
+            <Button fullWidth variant="dark" onClick={handleLogout}>
+              Вийти
+            </Button>
+          </>
+        ) : (
+          <Button fullWidth onClick={handleLoginClick}>
+            Увійти
+          </Button>
+        )}
       </div>
     </header>
   )

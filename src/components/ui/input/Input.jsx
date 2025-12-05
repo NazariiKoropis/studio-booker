@@ -13,6 +13,7 @@ export default function Input({
   error = '',
   fullWidth = false,
   className = '',
+  ...rest
 }) {
   return (
     <div
@@ -38,6 +39,7 @@ export default function Input({
         required={required}
         disabled={disabled}
         className={clsx(styles.input, { [styles.errorInput]: error })}
+        {...rest}
       />
     </div>
   )
