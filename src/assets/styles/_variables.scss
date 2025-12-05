@@ -1,49 +1,39 @@
 @use "sass:color";
 
-// 🎨 COLOR PALETTE
 $white: #f9f7f7;
 $lightBlue: #dbe2ef;
 $blue: #3f72af;
 $navy: #112d4e;
 
-// TEXT COLORS
 $text-dark: $navy;
 $text-light: #ffffff;
 
-// UI COLORS
 $background-primary: $white;
 $background-secondary: $lightBlue;
 $accent: $blue;
 
-// COMPONENT COLORS
 $button-primary: $blue;
 $button-primary-hover: color.adjust($blue, $lightness: -7%);
 
 $button-dark: $navy;
 $button-dark-hover: color.adjust($navy, $lightness: 8%);
 
-// BORDERS / SHADOWS
 $border-color: rgba(0, 0, 0, 0.1);
 $shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
 
-// CONTAINER
 $container-max-width: 1440px;
 $container-padding: 20px;
 
-// SPACING & RADIUS
 $radius: 12px;
 $padding-section: 60px;
 
-// FONTS
 $font-main: "Inter", sans-serif;
 $font-heading: "Poppins", sans-serif;
 
-// TYPOGRAPHY
 $fs-base: 18px;
 $lh-base: 1.5;
 $fw-base: 400;
 
-// HEADINGS
 $fs-h1: 48px;
 $fs-h2: 36px;
 $fs-h3: 28px;

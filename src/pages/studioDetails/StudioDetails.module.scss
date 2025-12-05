@@ -1,0 +1,18 @@
+.page {
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 40px 0 80px;
+}
+
+.loading {
+    text-align: center;
+    padding: 80px 0;
+    color: #3f72af;
+    font-weight: 600;
+}

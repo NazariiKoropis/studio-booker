@@ -1,0 +1,33 @@
+@use "../../../assets/styles/variables" as *;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px 0;
+}
+
+.btn {
+    background: white;
+    border: 2px solid $primary-light;
+    color: $primary-dark;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        border-color: $primary;
+    }
+}
+
+.active {
+    background: $primary-light;
+    color: white;
+    border-color: $primary-light;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

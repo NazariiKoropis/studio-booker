@@ -1,0 +1,32 @@
+.title {
+    font-size: 28px;
+    color: #112d4e;
+    margin-bottom: 20px;
+}
+
+.list {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: #f9f7f7;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.rating {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #3f72af;
+}
+
+.message {
+    font-size: 16px;
+    color: #112d4e;
+}
+
+.noReviews {
+    font-size: 16px;
+    color: #3f72af;
+}

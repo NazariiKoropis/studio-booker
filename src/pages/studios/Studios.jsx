@@ -1,60 +1,51 @@
+import { useEffect, useState } from 'react'
 import styles from './Studios.module.scss'
+
 import Hero from '../../components/studios/hero/Hero'
 import StudiosFilter from '../../components/studios/studiosFilter/StudiosFilter'
 import StudiosList from '../../components/studios/studiosList/StudiosList'
 import Container from '../../components/common/container/Container'
-import { useState } from 'react'
+
+import { getAllStudios } from '../../services/studiosService'
 
 export default function Studios() {
-  const data = [
-    {
-      img: '1.jpg',
-      slug: 'moon-studio-1',
-      title: 'Moon Studio1',
-      price: 100,
-      desc: 'Modern photo studio with natural light.',
-      isHotTopic: true,
-      location: 'lviv',
-      capacity: 3,
-    },
-    {
-      img: '2.jpg',
-      slug: 'moon-studio-2',
-      title: 'Moon Studio2',
-      price: 200,
-      desc: 'Modern photo studio with natural light.',
-      isHotTopic: false,
-      location: 'kyiv',
-      capacity: 5,
-    },
-    {
-      img: '3.jpg',
-      slug: 'moon-studio-3',
-      title: 'Moon Studio3',
-      price: 350,
-      desc: 'Modern photo studio with natural light.',
-      isHotTopic: false,
-      location: 'odesa',
-      capacity: 2,
-    },
-    {
-      img: '1.jpg',
-      slug: 'moon-studio-4',
-      title: 'Moon Studio4',
-      price: 150,
-      desc: 'Modern photo studio with natural light.',
-      isHotTopic: false,
-      location: 'lviv',
-      capacity: 8,
-    },
-  ]
+  const [studios, setStudios] = useState([])
+  const [filteredData, setFilteredData] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const [filteredData, setFilteredData] = useState(data)
+  useEffect(() => {
+    async function loadStudios() {
+      try {
+        const all = await getAllStudios()
+
+        const normalized = all.map((s) => ({
+          id: s.id,
+          img: s.images?.[0],
+          slug: s.slug,
+          title: s.name,
+          price: s.pricePerHour,
+          desc: s.description,
+          isHotTopic: s.isHotTopic,
+          location: s.locationCity,
+          capacity: s.capacity,
+        }))
+
+        setStudios(normalized)
+        setFilteredData(normalized)
+      } catch (error) {
+        console.error('Помилка завантаження студій:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadStudios()
+  }, [])
 
   const applyFilters = (criteria) => {
     const { name, location, capacities, hotOnly, priceRange } = criteria
 
-    let filtered = data
+    let filtered = studios
 
     if (name.trim()) {
       filtered = filtered.filter((s) =>
@@ -88,11 +79,13 @@ export default function Studios() {
       <section className={styles.content}>
         <Container className={styles.inner}>
           <div className={styles.layout}>
-            {/* Передаємо applyFilters вниз */}
             <StudiosFilter onApply={applyFilters} />
 
-            {/* Тепер StudiosList отримує filteredData */}
-            <StudiosList data={filteredData} />
+            {loading ? (
+              <p className={styles.loading}>Завантаження студій...</p>
+            ) : (
+              <StudiosList data={filteredData} />
+            )}
           </div>
         </Container>
       </section>

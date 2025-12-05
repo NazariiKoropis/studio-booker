@@ -1,0 +1,43 @@
+@use "../../../assets/styles/variables" as v;
+@use "../../../assets/styles/breakpoints" as bp;
+
+.mission {
+    background: v.$blue;
+    padding: 40px 0;
+
+    @media (max-width: bp.$break-tablet) {
+        padding: 60px 0;
+    }
+
+    @media (max-width: bp.$break-small) {
+        padding: 40px 0;
+    }
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    color: v.$text-light;
+    margin-bottom: 20px;
+    font-weight: 700;
+
+    @media (max-width: bp.$break-small) {
+        font-size: 28px;
+    }
+}
+
+.text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: v.$text-light;
+    margin-bottom: 20px;
+
+    @media (max-width: bp.$break-small) {
+        font-size: 16px;
+    }
+}

@@ -13,9 +13,8 @@ export default function CallToAction() {
         <Button
           variant="outline"
           fullWidth
-          onClick={() => alert('Opening studios')}
+          onClick={() => alert('Переходимо до переліку студій')}
         >
-          {' '}
           Переглянути студії
         </Button>
       </Container>

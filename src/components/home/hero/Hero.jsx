@@ -15,9 +15,9 @@ export default function Hero() {
         </p>
         <Button
           variant="outline--light"
-          onClick={() => alert('Studios writing...')}
+          onClick={() => alert('Сторінка студій готується')}
         >
-          Book a Studio
+          Забронювати студію
         </Button>
       </Container>
     </section>

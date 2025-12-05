@@ -6,6 +6,11 @@ export default function RangeControl({ min, max, onChange }) {
   const [minPrice, setMinPrice] = useState(min)
   const [maxPrice, setMaxPrice] = useState(max)
 
+  useEffect(() => {
+    setMinPrice(min)
+    setMaxPrice(max)
+  }, [min, max])
+
   const onChangeLeft = (e) => {
     const newValue = Number(e.target.value)
     if (newValue < maxPrice) setMinPrice(newValue)
@@ -18,36 +23,32 @@ export default function RangeControl({ min, max, onChange }) {
 
   const minPercent = ((minPrice - min) / (max - min)) * 100
   const maxPercent = ((maxPrice - min) / (max - min)) * 100
+  const clamp = (value) => Math.min(100, Math.max(0, value))
 
   useEffect(() => {
     if (onChange) {
       onChange({ min: minPrice, max: maxPrice })
     }
-  }, [minPrice, maxPrice])
+  }, [minPrice, maxPrice, onChange])
 
   return (
     <div className={styles.rangeControl}>
-      {/* Показ значень */}
       <div className={styles.values}>
-        <span>Min: {minPrice}</span>
-        <span>Max: {maxPrice}</span>
+        <span>₴{minPrice}</span>
+        <span>₴{maxPrice}</span>
       </div>
 
-      {/* Контейнер з треком */}
       <div className={styles.trackWrapper}>
-        {/* Лінія треку */}
         <div className={styles.track}></div>
 
-        {/* Активний сегмент */}
         <div
           className={styles.activeTrack}
           style={{
-            left: `${minPercent}%`,
-            right: `${100 - maxPercent}%`,
+            left: `${clamp(minPercent)}%`,
+            right: `${clamp(100 - maxPercent)}%`,
           }}
         ></div>
 
-        {/* Ліва ручка */}
         <input
           type="range"
           min={min}
@@ -57,7 +58,6 @@ export default function RangeControl({ min, max, onChange }) {
           className={clsx(styles.thumb, styles.thumbLeft)}
         />
 
-        {/* Права ручка */}
         <input
           type="range"
           min={min}

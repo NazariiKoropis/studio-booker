@@ -1,15 +1,17 @@
 {
     "users": {
         "uid_1": {
-            "name": "John Doe",
+            "name": "Джон Доу",
             "email": "john@example.com",
+            "phone": "+380661112233",
             "role": "member",
             "isAdmin": false,
             "createdAt": "2025-11-12T18:00:00+02:00"
         },
         "uid_2": {
-            "name": "Jane Smith",
+            "name": "Джейн Сміт",
             "email": "jane@example.com",
+            "phone": "+380671234567",
             "role": "admin",
             "isAdmin": true,
             "createdAt": "2025-11-12T18:00:00+02:00"
@@ -19,13 +21,15 @@
         "studio_1": {
             "name": "Moon Studio",
             "slug": "moon-studio",
-            "location": "Lviv, Franka 12",
+            "locationCity": "lviv",
+            "locationAddress": "вул. Франка, 12",
             "pricePerHour": 100,
-            "phone": "+3800000000",
-            "email": "studio@gmail.com",
             "capacity": 5,
+            "isHotTopic": true,
             "rating": 4.5,
-            "description": "Modern photo studio with natural light.",
+            "description": "Сучасна фотостудія з природним освітленням.",
+            "email": "studio@gmail.com",
+            "phone": "+3800000000",
             "images": [
                 "1.jpg",
                 "2.jpg",
@@ -35,13 +39,15 @@
         "studio_2": {
             "name": "Sun Studio",
             "slug": "sun-studio",
-            "location": "Lviv, Zelena 45",
+            "locationCity": "lviv",
+            "locationAddress": "вул. Зелена, 45",
             "pricePerHour": 120,
-            "phone": "+3800000001",
-            "email": "sun@gmail.com",
             "capacity": 8,
+            "isHotTopic": false,
             "rating": 4.8,
-            "description": "Bright loft with props and modern lighting.",
+            "description": "Світлий лофт з реквізитом та сучасним освітленням.",
+            "email": "sun@gmail.com",
+            "phone": "+3800000001",
             "images": [
                 "1.jpg",
                 "2.jpg",
@@ -53,6 +59,7 @@
         "booking_1": {
             "userId": "uid_1",
             "studioId": "studio_1",
+            "customerPhone": "+380661112233",
             "bookDate": "2031-11-11",
             "startTime": "23:00",
             "durationHours": 2,
@@ -64,6 +71,7 @@
         "booking_2": {
             "userId": "uid_2",
             "studioId": "studio_2",
+            "customerPhone": "+380671234567",
             "bookDate": "2031-12-01",
             "startTime": "15:00",
             "durationHours": 1,
@@ -77,14 +85,14 @@
         "review_1": {
             "userId": "uid_1",
             "studioId": "studio_1",
-            "message": "Nice place, good lighting!",
+            "message": "Приємне місце, чудове освітлення!",
             "rating": 4.5,
             "createdAt": "2025-11-12T18:00:00+02:00"
         },
         "review_2": {
             "userId": "uid_2",
             "studioId": "studio_2",
-            "message": "Very professional staff!",
+            "message": "Дуже професійний персонал!",
             "rating": 5,
             "createdAt": "2025-11-12T18:00:00+02:00"
         }

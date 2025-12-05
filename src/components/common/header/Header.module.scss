@@ -6,7 +6,6 @@
     padding: 15px 0;
 }
 
-/* Layout */
 .headerInner {
     display: flex;
     align-items: center;
@@ -14,7 +13,6 @@
     position: relative;
 }
 
-/* Centered logo */
 .headerLogo {
     height: 150px;
 
@@ -24,7 +22,6 @@
     }
 }
 
-/* Desktop Navbar */
 .navBar {
     display: flex;
 
@@ -59,7 +56,6 @@
     }
 }
 
-/* Burger button */
 .burger {
     display: none;
     font-size: 28px;
@@ -68,12 +64,10 @@
     cursor: pointer;
 }
 
-/* Desktop login */
 .desktopLogin {
     display: block;
 }
 
-/* MOBILE MENU */
 .mobileMenu {
     position: fixed;
     top: 0;
@@ -104,7 +98,6 @@
     }
 }
 
-/* Close button in menu */
 .closeBtn {
     align-self: flex-end;
     font-size: 32px;
@@ -114,7 +107,6 @@
     cursor: pointer;
 }
 
-/* Overlay */
 .overlay {
     position: fixed;
     inset: 0;
@@ -129,8 +121,6 @@
         pointer-events: all;
     }
 }
-
-/* ------------------- RESPONSIVE ------------------- */
 
 @include bp.tablet {
     .header {

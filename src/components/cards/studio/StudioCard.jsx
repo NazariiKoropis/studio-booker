@@ -1,41 +1,45 @@
+import { Link } from 'react-router-dom'
 import styles from './StudioCard.module.scss'
-import Button from '../../ui/button/Button'
 
 export default function StudioCardLarge({
   image,
-  imageFolder,
   slug,
   title,
   price,
   desc,
   isHotTopic = false,
-  onClick,
 }) {
-  const baseFolder = imageFolder || slug
-  const imagePath = new URL(
-    `../../../assets/studios/${baseFolder}/${image}`,
-    import.meta.url
-  ).href
+  const hasImage = slug && image
+  const imagePath = hasImage
+    ? new URL(
+        `../../../assets/studios/${slug}/${image}`,
+        import.meta.url
+      ).href
+    : ''
 
   return (
-    <article className={styles.card} onClick={onClick}>
-      {isHotTopic && <span className={styles.hotTopic}>🔥 Hot</span>}
+    <Link to={`/studios/${slug}`} className={styles.cardLink}>
+      <article className={styles.card}>
+        {isHotTopic && <span className={styles.hotTopic}>🔥 Топ</span>}
 
-      <div className={styles.imageWrapper}>
-        <img src={imagePath} alt={title} />
-      </div>
+        <div className={styles.imageWrapper}>
+          {hasImage ? (
+            <img src={imagePath} alt={title} loading="lazy" />
+          ) : (
+            <div className={styles.imagePlaceholder}>Фото буде додано</div>
+          )}
+        </div>
 
-      <div className={styles.cardInfo}>
-        <h3 className={styles.cardTitle}>{title}</h3>
+        <div className={styles.cardInfo}>
+          <h3 className={styles.cardTitle}>{title}</h3>
 
-        <p className={styles.cardDesc}>{desc}</p>
+          <p className={styles.cardDesc}>{desc}</p>
 
-        <p className={styles.cardPrice}>${price}.00 / Годину</p>
-      </div>
+          <p className={styles.cardPrice}>${price} / годину</p>
+        </div>
 
-      <Button size="sm" fullWidth>
-        Переглянути
-      </Button>
-    </article>
+        <span className={styles.cardCta}>Переглянути →</span>
+      </article>
+    </Link>
   )
 }

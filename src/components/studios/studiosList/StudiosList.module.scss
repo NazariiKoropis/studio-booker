@@ -1,0 +1,23 @@
+.studiosList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+}
+
+.empty {
+    padding: 40px 0;
+    text-align: center;
+    color: #3f72af;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 42px;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background-color: white;
+}

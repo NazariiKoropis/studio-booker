@@ -9,25 +9,25 @@ export default function Benefits() {
   const data = [
     {
       icon: Icon1,
-      alt: 'Professional equipment',
+      alt: 'Професійне обладнання',
       title: 'Професійне обладнання',
       text: 'Освітлення, фони, реквізит — все, що потрібно для зйомки.',
     },
     {
       icon: Icon2,
-      alt: 'Easy booking',
+      alt: 'Просте бронювання',
       title: 'Просте бронювання',
       text: 'Обери студію, дату та час за кілька кліків.',
     },
     {
       icon: Icon3,
-      alt: 'Affordable rates',
+      alt: 'Доступні тарифи',
       title: 'Доступні тарифи',
       text: 'Фіксована погодинна оплата без прихованих платежів.',
     },
     {
       icon: Icon4,
-      alt: 'Flexible working hours',
+      alt: 'Гнучкий графік роботи',
       title: 'Гнучкий графік роботи',
       text: 'Студії доступні з ранку до пізнього вечора.',
     },

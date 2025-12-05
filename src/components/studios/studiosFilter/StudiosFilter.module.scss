@@ -4,6 +4,7 @@
     background: $background-secondary;
     padding: 20px 0;
     border-radius: $radius;
+    max-height: 900px;
 }
 
 .inner {
@@ -12,14 +13,11 @@
     gap: 24px;
 }
 
-/* FORM items spacing */
 form {
     display: flex;
     flex-direction: column;
     gap: 28px;
 }
-
-/* ---- CHECKBOX GROUP ---- */
 
 .checkboxGroup {
     display: flex;
@@ -35,8 +33,6 @@ form {
     margin-bottom: 4px;
 }
 
-/* ---- CHECKBOX ---- */
-
 .checkbox {
     display: flex;
     align-items: center;
@@ -49,7 +45,7 @@ form {
     input {
         width: 18px;
         height: 18px;
-        accent-color: $blue; // кольор чекбокса при виборі
+        accent-color: $blue;
         cursor: pointer;
     }
 
@@ -58,8 +54,6 @@ form {
         color: $text-dark;
     }
 }
-
-/* ---- BUTTONS ---- */
 
 .buttons {
     display: flex;

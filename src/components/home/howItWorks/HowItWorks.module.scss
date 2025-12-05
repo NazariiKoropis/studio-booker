@@ -27,7 +27,6 @@
     color: v.$navy;
 }
 
-/* GRID */
 .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -35,7 +34,6 @@
     margin-top: 20px;
 }
 
-/* STEP CARD */
 .item {
     background: v.$lightBlue;
     border-radius: v.$radius;
@@ -64,7 +62,6 @@
     }
 }
 
-/* INDEX CIRCLE */
 .index {
     width: 52px;
     height: 52px;
@@ -82,7 +79,6 @@
     transition: 0.25s ease;
 }
 
-/* TITLES */
 .itemTitle {
     font-size: 20px;
     font-weight: 600;
@@ -91,7 +87,6 @@
     transition: 0.25s ease;
 }
 
-/* TEXT */
 .itemText {
     font-size: 16px;
     line-height: 1.5;
@@ -101,7 +96,6 @@
     max-width: 250px;
 }
 
-/* RESPONSIVE — TABLET */
 @include bp.tablet {
     .steps {
         grid-template-columns: repeat(2, 1fr);
@@ -115,7 +109,6 @@
         padding: 40px 0px;
     }
 }
-/* RESPONSIVE — MOBILE */
 @include bp.small-phone {
     .steps {
         grid-template-columns: 1fr;

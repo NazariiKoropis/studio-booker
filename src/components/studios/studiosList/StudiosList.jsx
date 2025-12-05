@@ -12,11 +12,10 @@ export default function StudiosList({ data }) {
 
   return (
     <section className={styles.studiosList}>
-      {data.map(({ img, imageFolder, slug, title, price, desc, isHotTopic }) => (
+      {data.map(({ img, slug, title, price, desc, isHotTopic }) => (
         <StudioCard
           key={slug}
           image={img}
-          imageFolder={imageFolder}
           slug={slug}
           title={title}
           price={price}

@@ -1,0 +1,15 @@
+.booking {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 28px;
+    color: #112d4e;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
