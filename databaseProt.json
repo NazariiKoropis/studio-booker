@@ -1,100 +1,121 @@
 {
-    "users": {
-        "uid_1": {
-            "name": "Джон Доу",
-            "email": "john@example.com",
-            "phone": "+380661112233",
-            "role": "member",
-            "isAdmin": false,
-            "createdAt": "2025-11-12T18:00:00+02:00"
-        },
-        "uid_2": {
-            "name": "Джейн Сміт",
-            "email": "jane@example.com",
-            "phone": "+380671234567",
-            "role": "admin",
-            "isAdmin": true,
-            "createdAt": "2025-11-12T18:00:00+02:00"
-        }
-    },
-    "studios": {
-        "studio_1": {
-            "name": "Moon Studio",
-            "slug": "moon-studio",
-            "locationCity": "lviv",
-            "locationAddress": "вул. Франка, 12",
-            "pricePerHour": 100,
-            "capacity": 5,
-            "isHotTopic": true,
-            "rating": 4.5,
-            "description": "Сучасна фотостудія з природним освітленням.",
-            "email": "studio@gmail.com",
-            "phone": "+3800000000",
-            "images": [
-                "1.jpg",
-                "2.jpg",
-                "3.jpg"
-            ]
-        },
-        "studio_2": {
-            "name": "Sun Studio",
-            "slug": "sun-studio",
-            "locationCity": "lviv",
-            "locationAddress": "вул. Зелена, 45",
-            "pricePerHour": 120,
-            "capacity": 8,
-            "isHotTopic": false,
-            "rating": 4.8,
-            "description": "Світлий лофт з реквізитом та сучасним освітленням.",
-            "email": "sun@gmail.com",
-            "phone": "+3800000001",
-            "images": [
-                "1.jpg",
-                "2.jpg",
-                "3.jpg"
-            ]
-        }
-    },
     "bookings": {
-        "booking_1": {
-            "userId": "uid_1",
-            "studioId": "studio_1",
-            "customerPhone": "+380661112233",
-            "bookDate": "2031-11-11",
-            "startTime": "23:00",
-            "durationHours": 2,
-            "peopleCount": 11,
-            "totalPrice": 200,
+        "-Ofi8zIuT-TDU3-uKBoK": {
+            "bookDate": "2025-12-16",
+            "createdAt": "2025-12-05T10:56:27.401Z",
+            "customerPhone": "",
+            "durationHours": 1,
+            "note": "",
+            "peopleCount": 1,
+            "startTime": "11:11",
             "status": "confirmed",
-            "createdAt": "2025-11-12T18:00:00+02:00"
+            "studioId": "studio_1",
+            "totalPrice": 100,
+            "userId": "a28wfenzbuX7iNJbCgHpo9ENhsH3"
+        },
+        "booking_1": {
+            "bookDate": "2031-11-11",
+            "createdAt": "2024-12-01T10:10:00+02:00",
+            "customerPhone": "+380004445566",
+            "durationHours": 2,
+            "peopleCount": 4,
+            "startTime": "23:00",
+            "status": "pending",
+            "studioId": "studio_1",
+            "totalPrice": 200,
+            "userId": "test_member_uid"
         },
         "booking_2": {
-            "userId": "uid_2",
-            "studioId": "studio_2",
-            "customerPhone": "+380671234567",
             "bookDate": "2031-12-01",
-            "startTime": "15:00",
+            "createdAt": "2024-12-01T10:12:00+02:00",
+            "customerPhone": "+380001112233",
             "durationHours": 1,
-            "peopleCount": 3,
-            "totalPrice": 120,
+            "peopleCount": 2,
+            "startTime": "15:00",
             "status": "pending",
-            "createdAt": "2025-11-12T18:10:00+02:00"
+            "studioId": "studio_2",
+            "totalPrice": 120,
+            "userId": "test_admin_uid"
         }
     },
     "reviews": {
         "review_1": {
-            "userId": "uid_1",
-            "studioId": "studio_1",
+            "createdAt": "2024-12-01T10:15:00+02:00",
             "message": "Приємне місце, чудове освітлення!",
             "rating": 4.5,
-            "createdAt": "2025-11-12T18:00:00+02:00"
+            "studioId": "studio_1",
+            "userId": "test_member_uid"
         },
         "review_2": {
-            "userId": "uid_2",
-            "studioId": "studio_2",
+            "createdAt": "2024-12-01T10:16:00+02:00",
             "message": "Дуже професійний персонал!",
             "rating": 5,
-            "createdAt": "2025-11-12T18:00:00+02:00"
+            "studioId": "studio_2",
+            "userId": "test_admin_uid"
+        }
+    },
+    "studios": {
+        "studio_1": {
+            "capacity": 5,
+            "description": "Сучасна фотостудія з природним освітленням.",
+            "email": "studio@gmail.com",
+            "id": "studio_1",
+            "images": [],
+            "isHotTopic": true,
+            "locationAddress": "вул. Франка, 12",
+            "locationCity": "lviv",
+            "name": "Moon Studio",
+            "phone": "+3800000000",
+            "pricePerHour": 100,
+            "rating": 4.5,
+            "slug": "moon-studio"
+        },
+        "studio_2": {
+            "capacity": 8,
+            "description": "Світлий лофт з реквізитом та сучасним освітленням.",
+            "email": "sun@gmail.com",
+            "id": "studio_2",
+            "images": [],
+            "isHotTopic": true,
+            "locationAddress": "вул. Зелена, 45",
+            "locationCity": "lviv",
+            "name": "Sun Studio",
+            "phone": "+3800000001",
+            "pricePerHour": 120,
+            "rating": 4.8,
+            "slug": "sun-studio"
+        }
+    },
+    "users": {
+        "a28wfenzbuX7iNJbCgHpo9ENhsH3": {
+            "createdAt": "2025-12-05T10:41:25.630Z",
+            "email": "admin@test.com",
+            "isAdmin": true,
+            "name": "admin@test.com",
+            "role": "admin"
+        },
+        "a6kgYBwYwoPKPL4UQEFzJSC54B32": {
+            "createdAt": "2025-12-05T10:53:37.989Z",
+            "email": "user@test.com",
+            "isAdmin": false,
+            "name": "user@test.com",
+            "role": "member"
+        },
+        "test_admin_uid": {
+            "createdAt": "2024-12-01T10:00:00+02:00",
+            "email": "admin@test.com",
+            "isAdmin": true,
+            "name": "Тест Адмін",
+            "phone": "+380001112233",
+            "role": "admin"
+        },
+        "test_member_uid": {
+            "createdAt": "2024-12-01T10:05:00+02:00",
+            "email": "user@test.com",
+            "isAdmin": false,
+            "name": "Тест Користувач",
+            "phone": "+380004445566",
+            "role": "member"
         }
     }
 }

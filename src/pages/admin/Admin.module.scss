@@ -1,0 +1,273 @@
+@use "../../assets/styles/variables" as v;
+@use "../../assets/styles/breakpoints" as bp;
+
+.adminSection {
+    background: linear-gradient(145deg, v.$background-secondary, #f3f6fb);
+    min-height: 100vh;
+    padding: 50px 0 70px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header {
+    background: v.$white;
+    border-radius: v.$radius;
+    padding: 22px 24px;
+    box-shadow: 0 12px 45px rgba(17, 45, 78, 0.06);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    h1 {
+        margin: 4px 0 6px;
+        font-size: v.$fs-h3;
+        color: v.$navy;
+    }
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: rgba(v.$navy, 0.6);
+    margin: 0;
+}
+
+.subhead {
+    margin: 0;
+    color: rgba(v.$navy, 0.75);
+}
+
+.error {
+    background: #ffecec;
+    border: 1px solid #f5b7b1;
+    color: #d9534f;
+    padding: 12px 14px;
+    border-radius: v.$radius;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+}
+
+.statCard {
+    background: v.$white;
+    padding: 16px 18px;
+    border-radius: v.$radius;
+    box-shadow: 0 6px 30px rgba(17, 45, 78, 0.05);
+
+    p {
+        margin: 0;
+        color: rgba(v.$navy, 0.6);
+    }
+
+    h3 {
+        margin: 6px 0 0;
+        font-size: 28px;
+        color: v.$navy;
+    }
+}
+
+.loader {
+    text-align: center;
+    color: v.$navy;
+    font-weight: 600;
+    padding: 40px 0;
+}
+
+.panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.panel {
+    background: v.$white;
+    border-radius: v.$radius;
+    padding: 16px;
+    box-shadow: 0 8px 40px rgba(17, 45, 78, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-weight: 600;
+        color: v.$navy;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid v.$border-color;
+        background: #f8fafc;
+        font-size: 15px;
+    }
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.checkbox {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px !important;
+
+    input {
+        width: auto;
+    }
+}
+
+.panelHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        margin: 0;
+        font-size: v.$fs-h5;
+        color: v.$navy;
+    }
+
+    span {
+        background: rgba(v.$blue, 0.1);
+        color: v.$blue;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 14px;
+    }
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tableHead,
+.tableRow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    align-items: center;
+}
+
+.tableHead {
+    font-weight: 700;
+    color: rgba(v.$navy, 0.7);
+    font-size: 14px;
+}
+
+.tableRow {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #f6f8fb;
+    font-size: 15px;
+    color: v.$navy;
+
+    select {
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: 1px solid v.$border-color;
+        background: v.$white;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px;
+    border-radius: 10px;
+    background: #f6f8fb;
+}
+
+.itemTitle {
+    margin: 0;
+    font-weight: 700;
+    color: v.$navy;
+}
+
+.itemSub {
+    margin: 2px 0 0;
+    color: rgba(v.$navy, 0.7);
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    background: rgba(v.$navy, 0.08);
+    color: v.$navy;
+}
+
+.badgeAdmin {
+    background: rgba(v.$blue, 0.14);
+    color: v.$blue;
+}
+
+.badgeUser {
+    background: rgba(20, 170, 90, 0.12);
+    color: #13834d;
+}
+
+@include bp.tablet {
+    .tableHead,
+    .tableRow {
+        grid-template-columns: 1.1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 8px 12px;
+
+        span:nth-child(3),
+        span:nth-child(4) {
+            display: none;
+        }
+    }
+
+    .panel {
+        padding: 14px;
+    }
+}
+
+@include bp.small-phone {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .panelHeader h2 {
+        font-size: 16px;
+    }
+}

@@ -1,5 +1,6 @@
 import { db } from '../firebase/db'
 import { ref, get, set, update, remove, push } from 'firebase/database'
+import { attachLocalImages } from './studioImages'
 
 export async function getAllStudios() {
   const studiosRef = ref(db, 'studios')
@@ -9,10 +10,12 @@ export async function getAllStudios() {
 
   const data = snapshot.val()
 
-  return Object.entries(data).map(([id, studio]) => ({
+  const studios = Object.entries(data).map(([id, studio]) => ({
     id,
     ...studio,
   }))
+
+  return attachLocalImages(studios)
 }
 
 export async function getStudioBySlug(slug) {
